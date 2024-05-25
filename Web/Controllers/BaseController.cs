@@ -19,8 +19,8 @@ namespace Web.Controllers
         protected override void OnException(ExceptionContext filterContext)
         {
             //for checking threadsafety
-            Parallel.Invoke(() => _iLog.LogException(filterContext.Exception.ToString()),
-                () => _iLog.LogException(filterContext.Exception.ToString()));
+            //Parallel.Invoke(() => _iLog.LogException(filterContext.Exception.ToString()),
+            //    () => _iLog.LogException(filterContext.Exception.ToString()));
 
             //normal call
             _iLog.LogException(filterContext.Exception.ToString());
